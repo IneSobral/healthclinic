@@ -1,14 +1,10 @@
 <?php
 
-session_start();
-
 define("ENV", parse_ini_file(".env"));
-
-define("ROOT","/healthconnect");
 
 $url_parts = explode("/",$_SERVER["REQUEST_URI"]);
 
-$controller = $url_parts[2]; //Isto talvez seja 1 ????
+$controller = $url_parts[2]; 
 
 if(empty($controller)){
     $controller = "home";
