@@ -129,11 +129,11 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(./img/medical-team.jpg);
+    background-image: url(./imagens/medical-team.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    filter: brightness(1.2); /* Adjust the brightness value as needed */
-    opacity: 0.7; /* Adjust the opacity to control the overlay intensity */
+    filter: brightness(1.2); 
+    opacity: 0.7; 
 }
 
 /* Medical page - CARD SECTION*/
