@@ -72,14 +72,14 @@ foreach ($doctors as $doctor) {
 
     echo '
         <div class="doctor-card" data-specialty="'. $doctor['speciality_name'] .'" data-teleconsulta="' . $doctor['teleconsultation'] . '">
-            <a href="/doctordetail/' .$doctor['doctor_id'].'">
+            <a href="/HealthConnect/doctordetail/' .$doctor['doctor_id'].'">
                 <div class="doctor-card-img">
-                <img src="./imagens/' . $doctor['doctor_img'] .'" alt="'. $doctor['doctor_name'] .'">
+                <img src="./imagens' . $doctor['doctor_img'] .'" alt="'. $doctor['doctor_name'] .'">
                 </div>
             </a>
             <div class="doctor-card-info">
                 <div class="doctor-info-wrapper">
-                    <a href="/doctordetail/' .$doctor['doctor_id'].'">
+                    <a href="/HealthConnect/doctordetail/' .$doctor['doctor_id'].'">
                         <p class="name">'. $doctor['doctor_name'] .'</p>
                     </a>
                     <div class="specialties">

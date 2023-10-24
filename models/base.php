@@ -17,9 +17,9 @@ class Base {
 	}
 }
 
-class Home {
+class Home extends Base {
   public function index() {
-      require("views/home.php");
+     
   }
 }
 

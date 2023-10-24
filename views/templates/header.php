@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="/HealthConnect/styles.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,13 +19,13 @@
 <body>
     <header>
         <nav class="navbar bg-primary" data-bs-theme="dark">
-            <a href="./home"><img src="./imagens/hospital-building.png" alt="" class="nav__img px-2"></a>
+            <a href="/HealthConnect/home"><img src="/HealthConnect/imagens/hospital-building.png" alt="" class="nav__img px-2"></a>
             <div class="nav__center">
                 <ul>
                     <li class="nav__list mb-0">
-                        <a href="./about">Sobre nós</a>
-                        <a href="./doctors">Corpo clínico</a>
-                        <a href="">Contactos</a>
+                        <a href="/HealthConnect/about">Sobre nós</a>
+                        <a href="/HealthConnect/doctors">Corpo clínico</a>
+                        <a href="/HealthConnect/contacts">Contactos</a>
                     </li>
                 </ul>
             </div>

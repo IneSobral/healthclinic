@@ -6,8 +6,14 @@ class Doctors extends Base {
     public function getDoctors() {
         
         $query = $this->db->prepare("
-			SELECT *
-			FROM doctors
+			SELECT 
+				doctors.doctor_id, 
+				doctors.doctor_name, 
+				doctors.doctor_img, 
+				doctors.interest, 
+				doctors.teleconsultation, 
+				specialties.speciality_name
+			FROM doctors 
             INNER JOIN specialties
             USING(specialty_id)
 		");
@@ -28,5 +34,22 @@ class Doctors extends Base {
         return $result['count'];
     }
     
+	public function getDetail($doctor_id) {
+        $query = $this->db->prepare("
+            SELECT * , specialties.specialty_id, specialties.speciality_name
+            FROM doctors
+            INNER JOIN specialties
+            USING(specialty_id)
+            WHERE doctor_id = ?
+            ");
+
+            $query->execute([
+                $doctor_id
+            ]);
+
+            return $query->fetch();
+
+    }
+
 
 } 
