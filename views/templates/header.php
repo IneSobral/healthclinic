@@ -36,7 +36,7 @@
         if(isset($_SESSION['user_id'])) {
 ?>
             <li>
-                <a href="./logout/">Terminar Sessão</a>
+                <a href="/HealthConnect/logout/">Terminar Sessão</a>
             </li>
 <?php
             }
@@ -44,10 +44,10 @@
 ?>
 
                 <li>
-                    <a href="./login/">Login</a>
+                    <a href="/HealthConnect/login/">Login</a>
                 </li>
                 <li>
-                    <a href="./register/">Criar Conta</a>
+                    <a href="/HealthConnect/register/">Criar Conta</a>
                 </li>
 <?php
 }

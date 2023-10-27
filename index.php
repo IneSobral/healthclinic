@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 define("ENV", parse_ini_file(".env"));
 
 $url_parts = explode("/",$_SERVER["REQUEST_URI"]);
