@@ -36,6 +36,9 @@
         if(isset($_SESSION['user_id'])) {
 ?>
             <li>
+                <a href="/HealthConnect/appointments/">Perfil</a>
+            </li>
+            <li>
                 <a href="/HealthConnect/logout/">Terminar Sessão</a>
             </li>
 <?php

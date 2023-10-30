@@ -33,7 +33,7 @@
                 mb_strlen($_POST["city"]) <= 50 &&
                 mb_strlen($_POST["user_contact"]) >= 9 &&
                 mb_strlen($_POST["user_contact"]) <= 30 &&
-                mb_strlen($_POST["country"]) <= 3 &&
+                mb_strlen($_POST["country"]) >= 3 &&
                 mb_strlen($_POST["country"]) <= 30 
             ) {
 
@@ -49,7 +49,7 @@
                     $_SESSION["user_id"] = $createdUser["user_id"];        
                     var_dump($createdUser);
 
-                    header("Location: ../");
+                    header("Location: ../appointments.php");
                 }
                 else{
                     $message = "Utilizador já existente.";

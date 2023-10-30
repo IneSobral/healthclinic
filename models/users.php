@@ -38,10 +38,6 @@ class Users extends Base {
     
         $data["user_id"] = $this->db->lastInsertId();
         $data["api_key"] = $api_key;
-        
-echo '<pre>';
-print_r($data);
-echo '</pre>';
 
         return $data;
       
@@ -49,12 +45,55 @@ echo '</pre>';
     
     public function getAll() {
             $query = $this->db->prepare('
-            SELECT user_id, user_name, user_email
+            SELECT *
             FROM users
             ');
 
             $query->execute();
 
             return $query->fetchAll();
+        }
+
+    
+        public function getById($user_id) {
+            $query = $this->db->prepare('
+                SELECT *
+                FROM users
+                WHERE user_id = ?
+            ');
+        
+            $query->execute([$user_id]);
+        
+            return $query->fetch();
+        }
+
+        public function updateUser($data, $id){
+
+            $query = $this->db->prepare("
+                UPDATE
+                    users
+                SET
+                    street_name = ?,
+                    city = ?,
+                    zip_code = ?,
+                    country = ?
+                WHERE
+                    user_id = ?
+            ");
+    
+            $query->execute([
+                $data["street_name"],
+                $data["city"],
+                $data["zip_code"],
+                $data["country"],
+                $id
+            ]);
+    
+    
+    
+            $data["user_id"] = $id;
+    
+            return $data;
+    
         }
 }

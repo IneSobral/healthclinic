@@ -25,7 +25,7 @@ if( isset($_POST["send"]) ) {
               password_verify($_POST["password"], $user["password"])
             ) {
             $_SESSION['user_id'] = $user['user_id'];
-            header('Location: ../');
+            header('Location: ../appointments');
         } else {
             $message = "Preencha os campos correctamente.";
         }

@@ -1,5 +1,5 @@
 //FILTROS PARA ESCOLHER CHECKBOX
-
+document.addEventListener("DOMContentLoaded", function () {
 const checkboxes = document.querySelectorAll('.form-check-input');
 const cards = document.querySelectorAll('.doctor-card');
 const clearFilters = document.getElementById('clearFilters');
@@ -42,7 +42,7 @@ function updateCardDisplay() {
                 card.style.display = 'flex';
             });
         });
- 
+    });
 
 //SEARCH BOX 
 
@@ -57,6 +57,32 @@ function updateCardDisplay() {
             const txtValue = label.textContent.toLowerCase();
             const isMatch = txtValue.includes(value);
             
-            isMatch = item.style.display ? 'block' : 'none';
+            item.style.display = isMatch ? 'block' : 'none';
         });
     });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const specialtySelect = document.getElementById('specialtySelect');
+        const doctorSelect = document.getElementById('doctorSelect');
+    
+        specialtySelect.addEventListener("change", () => {
+            const selectedSpecialty = specialtySelect.value;
+    
+            // Você deve fazer uma solicitação AJAX (fetch) para buscar os médicos com base na especialidade selecionada
+            // Suponha que você tenha um arquivo PHP para processar a solicitação e retornar médicos
+    
+            fetch('seu_arquivo_php.php?specialty=' + selectedSpecialty)
+                .then(response => response.json())
+                .then(doctors => {
+                    doctorSelect.innerHTML = '<option value=""> Selecione </option>';
+                    doctors.forEach(doctor => {
+                        const option = document.createElement('option');
+                        option.value = doctor['doctor_id'];
+                        option.textContent = doctor['doctor_name'];
+                        doctorSelect.appendChild(option);
+                    });
+                });
+        });
+    });
+
