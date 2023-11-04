@@ -48,8 +48,25 @@ class Doctors extends Base {
             ]);
 
             return $query->fetch();
-
     }
 
+    public function getDoctorsBySp($specialty_id) {
+
+        $query = $this->db->prepare("
+            SELECT  
+                doctors.doctor_id, 
+                doctors.doctor_name, 
+                specialties.speciality_name
+            FROM doctors
+            INNER JOIN specialties
+            ON doctors.specialty_id = specialties.specialty_id
+            WHERE doctors.specialty_id = ?
+        ");
+
+        
+        $query->execute([$specialty_id]);
+
+        return $query->fetchAll();
+    }
 
 } 

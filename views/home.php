@@ -18,6 +18,5 @@
 <?php
     //require('templates/footer.php');
 ?>
-
 </body>
 </html>

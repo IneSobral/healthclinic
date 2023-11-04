@@ -16,4 +16,20 @@ class Specialties extends Base {
         return $result['count'];
         
     }
+
+	public function getAll() {
+
+		$query = $this->db->prepare("
+		SELECT 
+			specialty_id,
+			speciality_name
+		FROM 
+			specialties
+		");
+
+		$query->execute();
+
+		return $query->fetchAll();
+
+	}
 }

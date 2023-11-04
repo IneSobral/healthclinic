@@ -1,5 +1,15 @@
 {
-    "require": {
-        "rbdwllr/reallysimplejwt": "^5.0"
-    }
+    "name": "inesr/health-connect",
+    "autoload": {
+        "psr-4": {
+            "Inesr\\HealthConnect\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "IneSobral",
+            "email": "inesobral@icloud.com"
+        }
+    ],
+    "require": {}
 }
