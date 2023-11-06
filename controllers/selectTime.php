@@ -6,11 +6,17 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-$specialtyId = $_SESSION['specialtyId'];
+$doctorId = $_SESSION['selectedDoctorId'];
 
-require 'models/doctors.php';
+require 'models/schedule.php';
+require 'models/hours.php'; 
+$modelHours = new Hours();
+$timeSlot = $modelHours->getAll(); 
 
-$modelDoctors = new Doctors();
-$doctors = $modelDoctors->getDoctorsBySp($specialtyId);
+$modelSchedule = new Schedule();
+$schedules = $modelSchedule->getDetail($doctorId);
 
 require 'views/selectTime.php';
+
+
+
