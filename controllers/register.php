@@ -45,7 +45,7 @@
                     $_SESSION["user_id"] = $createdUser["user_id"];        
                     var_dump($createdUser);
 
-                    header("Location: ../appointments.php");
+                    header("Location: ./appointments.php");
                 }
                 else{
                     $message = "Utilizador já existente.";

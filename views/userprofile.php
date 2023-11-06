@@ -39,7 +39,7 @@
 
             
         </article>
-        <a href="./appointments/">Voltar ao início</a>
+        <a href="./appointments">Voltar ao início</a>
 
       
         

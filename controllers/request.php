@@ -4,7 +4,6 @@ if(isset($_GET['specialtyId'])) {
 
     require 'models/doctors.php';
     $specialtyId = $_GET['specialtyId'];
-    $_SESSION['specialtyId'] = $specialtyId;
 
     $modelDoctors = new Doctors();
     $doctors = $modelDoctors->getDoctorsBySp($specialtyId);

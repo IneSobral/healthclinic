@@ -5,7 +5,7 @@
     <main class='login__section'>
         <div class='container__section'>
             <div class='left-slide'>
-                <img src="./imagens/appointment.jpg" alt="">
+                <img src="./imagens/selectTime.jpg" alt="">
             </div>
             <div class='rigth-slide'>
                 <h1>Marcação online de consultas</h1>
@@ -51,6 +51,15 @@ function fetchDoctors(specialtyId) {
         })
         .catch(error => { console.error('Erro ao procurar médico'); });
 }
+
+doctorSelect.addEventListener("change", () => {
+    const selectedDoctorId = doctorSelect.value;
+
+    fetch('./requestDoctor.php?doctorId=' + selectedDoctorId)
+        .then(response => response.json())
+        .catch(error => { console.error('Erro ao armazenar o ID do médico');
+         });
+});
 
 selectElement.addEventListener("change", () => {
     const selectedOption = selectElement.options[selectElement.selectedIndex];
