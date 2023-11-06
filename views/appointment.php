@@ -5,7 +5,7 @@
     <main class="appointment__section">
         <div class="container__section">
             <div class='left-slide'>
-                <img src="../imagens/appointment.jpg" alt="missing" >
+                <img src="./imagens/appointment.jpg" alt="" >
             </div>
             <div class='rigth-slide'>
                 <h1>Marcação de Consultas</h1>
