@@ -5,7 +5,7 @@
     <main class='login__section'>  
         <div class='container__section'>
             <div class='left-slide'>
-                <img src="./imagens/appointment.jpg" alt="">
+                <img src="./imagens/select3.jpg" alt="">
             </div>
             <div class='rigth-slide'>
                 <h1>Marcação online de consultas</h1>

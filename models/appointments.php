@@ -18,7 +18,7 @@ class Appointments extends Base{
 
     public function getDetail($user_id) {
         $query = $this->db->prepare("
-            SELECT *
+            SELECT schedule.schedule_date, hours.time_slot, doctors.doctor_name
             FROM appointments
             INNER JOIN schedule
             USING(schedule_id)
@@ -35,6 +35,25 @@ class Appointments extends Base{
             ]);
 
             return $query->fetch();
+    }
+
+    public function getById($user_id) {
+        $query = $this->db->prepare('
+            SELECT schedule.schedule_date, hours.time_slot, doctors.doctor_name
+            FROM appointments
+            INNER JOIN schedule
+            USING(schedule_id)
+            INNER JOIN hours
+            USING(hour_id)
+            INNER JOIN doctors
+            USING(doctor_id)
+            WHERE user_id = ?
+            ORDER BY schedule_date DESC LIMIT 8
+        ');
+    
+        $query->execute([$user_id]);
+    
+        return $query->fetchAll();
     }
 
 

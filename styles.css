@@ -427,6 +427,7 @@ a:hover {
 .rigth-slide h1 {
     padding-bottom: 1rem;
     color: #002766;
+    padding-left: 10px;
 }
 .form {
     display: flex;
@@ -489,4 +490,11 @@ a:hover {
     padding: 10px 20px;
     width: 200px;
 }
-
+@media screen and (max-width: 1300px) {
+    .form-email{
+        padding-left: 26px;
+    }
+    .form-password {
+        display: contents;
+    }
+}
