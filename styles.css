@@ -409,6 +409,13 @@ a:hover {
     margin-inline: auto;
 }
 
+@media screen and (max-height:800px) {
+    .container__section {
+        margin-top: 3rem;
+       
+    }
+}
+
 .left-slide, .rigth-slide {
     flex: 1;
 }

@@ -29,7 +29,7 @@
 <?php
                             foreach ($schedules as $schedule) {
                                 $scheduleDate = date('Y-m-d', strtotime($schedule['schedule_date']));
-                                $timeSlot = $schedule['time_slot'];
+                                $timeSlot = date('H:i', strtotime($schedule['time_slot']));
                                 $scheduleId = $schedule['schedule_id'];
                                 echo '
                                     <tr data-schedule-id="' . $scheduleId . '">

@@ -12,8 +12,9 @@
                     <table class='table table-hover table-striped '>
                         <thead>
                             <tr>
-                                <th scope="col mx-2">Selecionar</th>
+                                <th scope="col mx-2"></th>
                                 <th scope="col">Dia</th>
+                                <th scope="col">Médico</th>
                                 <th scope="col">Hora</th>
                             </tr>
                         </thead>
@@ -21,7 +22,8 @@
 <?php
                             foreach ($appointments as $appointment) {
                                 $scheduleDate = date('Y-m-d', strtotime($appointment['schedule_date']));
-                                $timeSlot = $appointment['time_slot'];
+                                $timeSlot = date('H:i', strtotime($appointment['time_slot']));
+                                $doctorName = $appointment['doctor_name'];
                                 $scheduleId = $appointment['schedule_id'];
                                
                                 echo '
@@ -31,6 +33,7 @@
                                            
                                         </td>
                                         <td>' . $scheduleDate . '</td>
+                                        <td>' . $doctorName . '</td>
                                         <td>' . $timeSlot . '</td>
                                     </tr>
                                 ';

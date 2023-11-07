@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
     $model = new Appointments();
     $userId = $_SESSION['user_id'];
 
-    $history = $model->getDetail($userId);
+    $history = $model->getRecord($userId);
     
     require 'views/record.php';
    
