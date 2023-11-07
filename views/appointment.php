@@ -14,7 +14,7 @@
 
                 <div class='appointment__menu'>
                     <a href="./selectDoctor" class='btn btn-primary'>Marcar Consulta</a>
-                    <a href="" class='btn btn-primary'>Anular Consulta</a>
+                    <a href="./cancelAppointment" class='btn btn-primary'>Anular Consulta</a>
                     <a href="./record" class='btn btn-primary'>Ver histórico</a>
                     <a href="./userprofile" class='btn btn-primary'>Ver perfil</a>
                 </div>

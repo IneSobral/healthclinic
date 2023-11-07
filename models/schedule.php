@@ -14,7 +14,7 @@ class Schedule extends Base {
         FROM schedule
         INNER JOIN hours
         ON schedule.hour_id = hours.hour_id
-        WHERE schedule.doctor_id = ? AND schedule.status = 'available' AND schedule.schedule_date >= CURDATE()
+        WHERE schedule.doctor_id = ? AND schedule.status = 'available' AND schedule.schedule_date > CURDATE()
 		");
 
 		$query->execute([$doctor_id]);
@@ -26,6 +26,15 @@ class Schedule extends Base {
         $query = $this->db->prepare("
             UPDATE schedule
             SET status = 'scheduled'
+            WHERE schedule_id = ?
+        ");
+
+        return $query->execute([$scheduleId]);
+    }
+    public function cancelSchedule($scheduleId) {
+        $query = $this->db->prepare("
+            UPDATE schedule
+            SET status = 'available'
             WHERE schedule_id = ?
         ");
 
