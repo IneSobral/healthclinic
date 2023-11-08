@@ -10,8 +10,6 @@ if (isset($_GET['scheduleId'])) {
     $modelSchedule = new Schedule();
     $schedule = $modelSchedule->updateState($scheduleId);
 
-   
-
     if ($schedule) {
         header('Content-Type: application/json');
         echo json_encode($schedule);

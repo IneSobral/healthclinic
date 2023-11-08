@@ -16,7 +16,8 @@
     else {
        
 ?>
-                    <table class='table table-hover table-striped '>
+                    <table id="consultationTable" class='table table-hover table-striped '>
+                        <p>Data: <input type="text" id="datepicker"></p>
                         <thead>
                             <tr>
                                 <th scope="col mx-2">Selecionar</th>
@@ -32,7 +33,7 @@
                                 $timeSlot = date('H:i', strtotime($schedule['time_slot']));
                                 $scheduleId = $schedule['schedule_id'];
                                 echo '
-                                    <tr data-schedule-id="' . $scheduleId . '">
+                                    <tr data-schedule-id="' . $scheduleId . '" data-schedule-date="' . $scheduleDate . '">
                                         <td>
                                             <input type="radio" name="selected_schedule" scope="row" value="' . $scheduleId . '">
                                            
@@ -86,6 +87,32 @@
                     }
                 }
                 return null;
+            }
+        });
+    </script>
+    <script>
+         $(function() {
+            const datePicker = $("#datepicker");
+            datePicker.datepicker({
+                minDate: 0,
+                maxDate: "+1M",
+                dateFormat: 'dd/mm/yy',
+                onSelect: function (dateText, inst) {
+                    const selectedDate = $.datepicker.formatDate('yy-mm-dd', datePicker.datepicker('getDate'));
+                    updateAvailableSchedules(selectedDate);
+                }
+            });
+
+            function updateAvailableSchedules(selectedDate) {
+                const rows = document.querySelectorAll('#consultationTable tbody tr');
+                rows.forEach(row => {
+                    const scheduleDate = row.getAttribute('data-schedule-date');
+                    if (scheduleDate === selectedDate) {
+                        row.style.display = 'table-row';  
+                    } else {
+                        row.style.display = 'none';  
+                    }
+                });
             }
         });
     </script>
