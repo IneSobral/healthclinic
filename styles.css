@@ -505,3 +505,44 @@ a:hover {
         display: contents;
     }
 }
+
+
+
+.contact__section {
+    position: relative;
+    width: 100vw;
+    height: 40vh;
+   
+}
+
+.contact__section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./imagens/profile2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    filter: brightness(1.2); 
+    opacity: 0.7; 
+}
+
+.contact-form {
+    max-width: 500px;
+    border: 1px solid #002766;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.contact-img {
+    max-width: 500px;
+    margin-left: 5rem;
+}
+
+.small-p {
+    font-size: 12px;
+}
