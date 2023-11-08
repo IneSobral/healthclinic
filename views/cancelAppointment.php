@@ -41,7 +41,15 @@
 ?>
                         </tbody>
                     </table>
-                    <a  href="" class='btn btn-primary mt-3' name="removeSlot" aria-label="Remover consulta" >Cancelar Consulta</a>
+<?php
+if (empty($appointments)) {
+    echo '<p>Não tem nenhuma consulta marcada.</p>';
+    echo '<a href="./appointments" class="btn btn-primary mt-3" name="removeSlot" aria-label="Remover consulta" >Voltar ao perfil</a>';
+} else {
+    echo '<a href="" class="btn btn-primary mt-3" name="removeSlot" aria-label="Remover consulta" >Cancelar Consulta</a>';
+}
+?>
+                   
             </div>
         </div>
         
@@ -55,9 +63,19 @@
             scheduleAppointmentButton.addEventListener('click', () => {
             
                 const selectedScheduleId = getSelectedScheduleId();
-                if (selectedScheduleId) {
+                
+                if (selectedScheduleId === null) {
                     
-                    fetch('./requestCancel.php?scheduleId=' + selectedScheduleId)
+                    const availableSchedules = document.querySelectorAll('input[type="radio"][name="selected_schedule"]:checked');
+                    if (availableSchedules.length === 0) {
+                        return;
+                    } else {
+                        alert('Selecione uma consulta antes de confirmar.');
+                        return;
+                    }
+                }
+                    
+                fetch('./requestCancel.php?scheduleId=' + selectedScheduleId)
                     .then(response => response.json())
                     .then(data => {
                         console.log(data)
@@ -66,9 +84,7 @@
                     })
                     .catch(error => { console.error('Erro ao armazenar o ID do schedule', error);
                     });
-                } else {
-                    alert('Selecione uma consulta antes de confirmar.');
-                }
+                
             });
 
             function getSelectedScheduleId() {

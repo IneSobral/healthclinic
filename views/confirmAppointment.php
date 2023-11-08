@@ -18,6 +18,7 @@
                 <dd><?= date('H:i', strtotime($appointment['time_slot'])) ?></dd>
             
             </dl>
+            <a href="./appointments" class='btn btn-primary'>Voltar ao perfil</a>
             </div>
         </div>
         
