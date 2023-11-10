@@ -5,7 +5,7 @@
     <main class='login__section'>  
         <div class='container__section'>
             <div class='left-slide'>
-                <img src="./imagens/select3.jpg" alt="">
+                <img src="/imagens/select3.jpg" alt="">
             </div>
             <div class='rigth-slide'>
                 <h1>Escolher consulta para cancelar</h1>
@@ -29,7 +29,7 @@
                                 echo '
                                     <tr data-schedule-id="' . $scheduleId . '">
                                         <td>
-                                            <input type="radio" name="selected_schedule" scope="row" value="' . $scheduleId . '">
+                                            <input type="radio" name="selected_schedule" value="' . $scheduleId . '">
                                            
                                         </td>
                                         <td>' . $scheduleDate . '</td>
@@ -44,7 +44,7 @@
 <?php
 if (empty($appointments)) {
     echo '<p>Não tem nenhuma consulta marcada.</p>';
-    echo '<a href="./appointments" class="btn btn-primary mt-3" name="removeSlot" aria-label="Remover consulta" >Voltar ao perfil</a>';
+    echo '<a href="/appointments/" class="btn btn-primary mt-3">Voltar ao perfil</a>';
 } else {
     echo '<a href="" class="btn btn-primary mt-3" name="removeSlot" aria-label="Remover consulta" >Cancelar Consulta</a>';
 }
@@ -74,8 +74,14 @@ if (empty($appointments)) {
                         return;
                     }
                 }
-                    
-                fetch('./requestCancel.php?scheduleId=' + selectedScheduleId)
+          
+                fetch('/requests/', {
+                        method: 'POST',
+                        headers: {
+                            "Content-Type":"application/x-www-form-urlencoded"
+                        },
+                        body: "request=cancelId&scheduleId=" + selectedScheduleId
+                    })
                     .then(response => response.json())
                     .then(data => {
                         console.log(data)

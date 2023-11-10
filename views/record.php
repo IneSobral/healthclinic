@@ -5,7 +5,7 @@
     <main class='login__section'>  
         <div class='container__section'>
             <div class='left-slide'>
-                <img src="./imagens/historic.jpg" alt="">
+                <img src="/imagens/historic.jpg" alt="">
             </div>
             <div class='rigth-slide mx-2'>
                 <h1>Histórico de consultas</h1>
@@ -29,7 +29,7 @@
 ?>
                     </tbody>
                 </table>
-                <a href="./appointments" class='btn btn-primary'>Voltar ao perfil</a>
+                <a href="/appointments" class='btn btn-primary'>Voltar ao perfil</a>
             </div>
         </div>
         

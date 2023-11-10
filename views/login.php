@@ -7,11 +7,11 @@
     <main class="login__section">
         <div class="container__section">
             <div class='left-slide'>
-                <img src="../imagens/login.jpg" alt="login-image" >
+                <img src="/imagens/login.jpg" alt="login-image" >
             </div>
             <div class='rigth-slide'>
                 <h1>Iniciar sessão</h1>
-                <form action="../login/" method='POST' class='form'>
+                <form action="/login/" method='POST' class='form'>
                     <div class='form-email'>
                         <label for="">Email
                             <input type="email" name='email' required>
@@ -30,7 +30,7 @@
         echo '<p role="alert" class="alert alert-danger">' . $message . '</p>';
     }
 ?>
-                <p>Se ainda não tiver conta,<br> pode criar conta<a href="../register/"> aqui.</a></p>
+                <p>Se ainda não tiver conta,<br> pode criar conta<a href="/register/"> aqui.</a></p>
                 </form>
             </div>
         </div>

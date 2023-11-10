@@ -11,10 +11,16 @@ class Schedule extends Base {
                 schedule.schedule_date,
                 hours.time_slot,
                 schedule.status
-            FROM schedule
-            INNER JOIN hours
-            ON schedule.hour_id = hours.hour_id
-            WHERE schedule.doctor_id = ? AND schedule.status = 'available' AND schedule.schedule_date > CURDATE()
+            FROM 
+                schedule
+            INNER JOIN 
+                hours
+            ON 
+                schedule.hour_id = hours.hour_id
+            WHERE 
+                schedule.doctor_id = ? 
+                AND schedule.status = 'available' 
+                AND schedule.schedule_date > CURDATE()
 		");
 
 		$query->execute([$doctor_id]);

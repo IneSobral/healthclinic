@@ -5,7 +5,7 @@
     <div class='container'>
         <div class='doctor-card'>
           <div class="doctor-card-img">
-            <img src="../imagens<?= $doctor["doctor_img"] ?>" alt="<?= $doctor["doctor_name"] ?>">
+            <img src="/imagens<?= $doctor["doctor_img"] ?>" alt="<?= $doctor["doctor_name"] ?>">
           </div>
           <div class="doctor-card-info">
               <div class="specialties-by-organization">

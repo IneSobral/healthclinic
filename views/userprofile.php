@@ -21,7 +21,7 @@
             <button type='button' id="updateAddressBtn" class="btn btn-primary mt-3">Alterar Morada</button>
 
 
-            <form action="./userprofile" method="POST" style="display: none;">
+            <form action="/userprofile/" method="POST" style="display: none;">
                 <label for="street_name">Rua:</label>
                 <input type="text" name="street_name" id="street_name"><br>
                 
@@ -39,7 +39,7 @@
 
             
         </article>
-        <a href="./appointments">Voltar ao início</a>
+        <a href="/appointments/">Voltar ao início</a>
 
       
         

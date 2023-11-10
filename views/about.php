@@ -3,7 +3,8 @@
     require('templates/header.php');
 ?>
 
-    <main class="about__section">
+    <main class="main">
+      <div class="about__section">
         <div class='intro__hero'>
             <h1 class='intro__heading'>Sobre nós</h1>
         </div>
@@ -34,11 +35,11 @@
                 </div>
             </div>
         </div>
+      </div>
     </main>
 
 <?php
-    //require('templates/footer.php');
+   //require('templates/footer.php');
 ?>
-
 </body>
 </html>

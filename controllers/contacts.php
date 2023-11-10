@@ -23,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         !empty($_POST["mensagem"]) &&
         filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)
     ) {
-        $email = $_POST["email"];
-        $assunto = $_POST["assunto"];
-        $mensagem = $_POST["mensagem"];
+        $email = htmlspecialchars(strip_tags(trim($_POST["email"])));
+        $assunto = htmlspecialchars(strip_tags(trim($_POST["assunto"])));
+        $mensagem = htmlspecialchars(strip_tags(trim($_POST["mensagem"])));
         
         try {
             //https://mailtrap.io/ - usei para testar
@@ -36,12 +36,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $mail->Port = 2525;
             $mail->Username = '1f1c116f0f2556';
             $mail->Password = '********98f3';
-            //Recipients
+         
             $mail->setFrom($email, 'Mailer');
-            $mail->addAddress('admin@healthconnect.com', 'Admin');     //Add a recipient
+            $mail->addAddress('admin@healthconnect.com', 'Admin');  
         
             //Content
-            $mail->isHTML(true);                                  //Set email format to HTML
+            $mail->isHTML(true);                                 
             $mail->Subject = $assunto;
             $mail->Body    = $mensagem;
         

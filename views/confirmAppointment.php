@@ -5,7 +5,7 @@
     <main class='login__section'>  
         <div class='container__section'>
             <div class='left-slide'>
-                <img src="./imagens/appointment.jpg" alt="">
+                <img src="/imagens/appointment.jpg" alt="">
             </div>
             <div class='rigth-slide'>
                 <h1>Resumo da consulta marcada</h1>
@@ -18,7 +18,7 @@
                 <dd><?= date('H:i', strtotime($appointment['time_slot'])) ?></dd>
             
             </dl>
-            <a href="./appointments" class='btn btn-primary'>Voltar ao perfil</a>
+            <a href="/appointments/" class='btn btn-primary'>Voltar ao perfil</a>
             </div>
         </div>
         

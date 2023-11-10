@@ -2,8 +2,8 @@
 <?php
     require('templates/header.php');
 ?>
-  
-    <main class="medical__section">
+  <main class='vh-90'>
+    <div class="medical__section">
         <section class='intro__hero'>
             <h1 class='intro__heading'>Corpo Clínico</h1>
         </section>
@@ -72,19 +72,19 @@ foreach ($doctors as $doctor) {
 
     echo '
         <div class="doctor-card" data-specialty="'. $doctor['speciality_name'] .'" data-teleconsulta="' . $doctor['teleconsultation'] . '">
-            <a href="/HealthConnect/doctordetail/' .$doctor['doctor_id'].'">
+            <a href="/doctordetail/' .$doctor['doctor_id'].'">
                 <div class="doctor-card-img">
-                <img src="./imagens' . $doctor['doctor_img'] .'" alt="'. $doctor['doctor_name'] .'">
+                <img src="/imagens' . $doctor['doctor_img'] .'" alt="'. $doctor['doctor_name'] .'">
                 </div>
             </a>
             <div class="doctor-card-info">
                 <div class="doctor-info-wrapper">
-                    <a href="/HealthConnect/doctordetail/' .$doctor['doctor_id'].'">
+                    <a href="/doctordetail/' .$doctor['doctor_id'].'">
                         <p class="name">'. $doctor['doctor_name'] .'</p>
                     </a>
                     <div class="specialties">
                         <span class="speciality">
-                            <a href="/especialidades/neurocirurgia">'.  $doctor['speciality_name'] .'</a>
+                            <p>'.  $doctor['speciality_name'] .'</p>
                         </span>                  
                     </div>
                     <div class="specialties-by-organization">
@@ -105,7 +105,7 @@ foreach ($doctors as $doctor) {
                 <div class="appointment-wrapper">
                     <div class="videoconsulta"></div>
                     <div class="appointment-button">
-                        <a href="" class="btn btn--blue btn--primary btn--small" target="_blank">
+                        <a href="/login/" class="btn btn--blue btn--primary btn--small">
                             <span>Marcar</span>
                         </a>
                     </div>
@@ -121,10 +121,11 @@ foreach ($doctors as $doctor) {
                 </div>
             </div>
         </section>
-    </main>
+    </div>
+</main>
 
 <?php
-   // require('templates/footer.php');
+   //require('templates/footer.php');
 ?>
    
 </body>

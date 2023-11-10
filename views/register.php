@@ -5,13 +5,13 @@
 ?>
     <section>
         <h1>Crie uma conta</h1>
-        <p>Se já for nosso cliente, <a href="../login/">faça login</a></p>
+        <p>Se já for nosso cliente, <a href="/login/">faça login</a></p>
 <?php
         if(isset($message)){
             echo '.<p role="alert">.' .$message. '</p>';
         }
 ?>
-        <form method="POST" action="./register/">
+        <form method="POST" action="/register/">
             <div>
                 <label>
                     Nome

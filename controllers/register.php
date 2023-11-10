@@ -35,15 +35,12 @@
 
                 require("models/users.php");
                 $model = new Users(); 
-                var_dump($_POST);
                 $user = $model->getByEmail( $_POST["user_email"] );
-                var_dump($user);
 
                 /* se o utilizador nao existir */
                 if( empty($user)) {
                     $createdUser = $model->create($_POST); 
                     $_SESSION["user_id"] = $createdUser["user_id"];        
-                    var_dump($createdUser);
 
                     header("Location: ./appointments.php");
                 }

@@ -47,7 +47,9 @@ class Appointments extends Base{
             USING(hour_id)
             INNER JOIN doctors
             USING(doctor_id)
-            WHERE appointments.user_id = ? AND schedule.status = "scheduled"
+            WHERE 
+                appointments.user_id = ? 
+                AND schedule.status = "scheduled"
             ORDER BY schedule_date DESC LIMIT 8
         ');
     

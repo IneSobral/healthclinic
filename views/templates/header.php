@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/HealthConnect/styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="./script.js" defer></script>
+    <script src="/script.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
       <!-- JQUERY UI Datepicker -->
@@ -26,13 +26,13 @@
 <body>
     <header>
         <nav class="navbar bg-primary" data-bs-theme="dark">
-            <a href="/HealthConnect/home"><img src="/HealthConnect/imagens/hospital-building.png" alt="" class="nav__img px-2"></a>
+            <a href="/home"><img src="/imagens/hospital-building.png" alt="" class="nav__img px-2"></a>
             <div class="nav__center">
                 <ul>
                     <li class="nav__list mb-0">
-                        <a href="/HealthConnect/about">Sobre nós</a>
-                        <a href="/HealthConnect/doctors">Corpo clínico</a>
-                        <a href="/HealthConnect/contacts">Contactos</a>
+                        <a href="/about/">Sobre nós</a>
+                        <a href="/doctors/">Corpo clínico</a>
+                        <a href="/contacts/">Contactos</a>
                     </li>
                 </ul>
             </div>
@@ -43,10 +43,10 @@
         if(isset($_SESSION['user_id'])) {
 ?>
             <li>
-                <a href="/HealthConnect/appointments">Perfil</a>
+                <a href="/appointments/">Perfil</a>
             </li>
             <li>
-                <a href="/HealthConnect/logout/">Terminar Sessão</a>
+                <a href="/logout/">Terminar Sessão</a>
             </li>
 <?php
             }
@@ -54,10 +54,10 @@
 ?>
 
                 <li>
-                    <a href="/HealthConnect/login/">Login</a>
+                    <a href="/login/">Login</a>
                 </li>
                 <li>
-                    <a href="/HealthConnect/register/">Criar Conta</a>
+                    <a href="/register/">Criar Conta</a>
                 </li>
 <?php
 }
