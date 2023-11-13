@@ -69,4 +69,40 @@ class Doctors extends Base {
         return $query->fetchAll();
     }
 
+    public function create($data) {
+
+		$query = $this->db->prepare("
+            INSERT INTO doctors
+                (doctor_name, doctor_img, interest, languages, brief_cv, teleconsultation, doctor_email, available_day, specialty_id)
+            VALUES
+                (?,?,?,?,?,?, ?, ?, ?)
+        ");
+
+		$query->execute([
+			$data["doctor_name"],
+			$data["doctor_img"],
+            $data["interest"],
+            $data["languages"],
+            $data["brief_cv"],
+            $data["teleconsultation"],
+            $data["doctor_email"],
+            $data["available_day"],
+            $data["specialty_id"]
+		]);
+
+		$data["doctor_id"] = intval( $this->db->lastInsertId() );
+       
+		return $data;
+	}
+
+    public function removeDoctor($doctorId) {
+        $query = $this->db->prepare("
+            DELETE FROM doctors
+            WHERE doctor_id = ?
+        ");
+
+        $query->execute([$doctorId]);
+    }
+
+
 } 

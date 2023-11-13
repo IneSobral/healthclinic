@@ -14,7 +14,6 @@ if( isset($_POST["send"]) ) {
         mb_strlen($_POST["password"]) <= 1000
     ) {
     
-        
         require("models/admins.php");
 
         $model = new Admins();
@@ -31,15 +30,18 @@ if( isset($_POST["send"]) ) {
         $message = "Email ou password incorrectos";
     }
 }
-require("views/adminlogin.php");
+
+
 if( !isset($_SESSION["admin_id"]) ) {
-    
     require("views/adminlogin.php");
-  
 }
 
 
-/* Para inserir administrador teste com password encriptada antes de ter formulário de registo
+
+
+
+
+/* Para inserir administrador com password encriptada antes de ter formulário de registo
 require_once("models/admins.php");
 $model = new Admins();
 $model->insertAdmin("admin@healthconnect.com", "12345678"); */
