@@ -85,4 +85,4 @@
     //require('templates/footer.php');
 ?>
 </body>
-</html>
+</html>git add 
