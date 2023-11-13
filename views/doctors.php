@@ -125,7 +125,7 @@ foreach ($doctors as $doctor) {
 </main>
 
 <?php
-   //require('templates/footer.php');
+   require('templates/footer.php');
 ?>
    
 </body>

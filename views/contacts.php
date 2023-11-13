@@ -14,7 +14,7 @@
                     <h3 class='heading__4'>Horário de funcionamento:</h3>
                     <p>Abertos das 9h00 às 19h00 (Encerramos ao fim-de-semana)</p>
                 </div>
-                <img src="/imagens/profile1.jpg" alt="" class='contact-img'>
+                <img src="./imagens/profile1.jpg" alt="" class='contact-img'>
             </div>
         </article>
 
@@ -75,7 +75,7 @@ if(isset($messageError)){
     </main>
 
 <?php
-    //require('templates/footer.php');
+    require('templates/footer.php');
 ?>
 
 </body>

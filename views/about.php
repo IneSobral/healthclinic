@@ -39,7 +39,7 @@
     </main>
 
 <?php
-   //require('templates/footer.php');
+   require('templates/footer.php');
 ?>
 </body>
 </html>
