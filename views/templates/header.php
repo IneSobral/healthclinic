@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <!-- DataTables -->
+    <link href="DataTables/datatables.min.css" rel="stylesheet">
+    <script src="DataTables/datatables.min.js"></script>
     <title>HealthConnect</title>
     
 </head>
@@ -41,25 +44,35 @@
 <?php
 
         if(isset($_SESSION['user_id'])) {
-?>
-            <li>
-                <a href="/appointments/">Perfil</a>
-            </li>
-            <li>
-                <a href="/logout/">Terminar Sessão</a>
-            </li>
-<?php
+            echo'
+                <li>
+                    <a href="/appointments/">Perfil</a>
+                </li>
+                <li>
+                    <a href="/logout/">Terminar Sessão</a>
+                </li>
+            ';
+            }
+            else if (isset($_SESSION['admin_id'])) {
+                echo'
+                    <li>
+                        <a href="/adminProfile/">Perfil do Admin</a>
+                    </li>
+                    <li>
+                        <a href="/logout/">Terminar Sessão</a>
+                    </li>
+                ';
             }
             else {
-?>
+                echo'
+                    <li>
+                        <a href="/login/">Login</a>
+                    </li>
+                    <li>
+                        <a href="/register/">Criar Conta</a>
+                    </li>
+                ';
 
-                <li>
-                    <a href="/login/">Login</a>
-                </li>
-                <li>
-                    <a href="/register/">Criar Conta</a>
-                </li>
-<?php
 }
 ?>                    
                 </ul>

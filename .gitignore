@@ -2,4 +2,5 @@
 /vendor/
 /imagens/
 favicon.ico
-jquery-ui-1.13.2
+/jquery-ui-1.13.2/
+/DataTables/
