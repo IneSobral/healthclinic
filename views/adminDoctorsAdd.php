@@ -2,11 +2,10 @@
     require('templates/header.php');
 
 ?>
-    <main class="admin__section">
-        <h1 class='heading__2'>Gestão de médicos > Inserir novo médico</h1>
-        <div class="container__section mb-3">
-          
-            <form method="post" action="/adminDoctorsAdd" class=' form-register'enctype="multipart/form-data">
+    <main class="admin__section" >
+        <h1 class='heading__2'>Gestão de médicos > <u>Inserir novo médico</u></h1>
+        <div class="bg-shape"> 
+            <form method="post" action="/adminDoctorsAdd" class='formAdmin form-register'enctype="multipart/form-data">
             <h2 class='heading__3 text-center'>Inserir novo médico</h2>
 <?php 
      if( isset($message)) {
@@ -43,7 +42,7 @@
                         <textarea name="brief_cv"></textarea>
                     </label>
                 </div>
-                <div class="form-group row">
+                <div class="form-group row checkbox">
                     <label>
                         Teleconsulta
                         <input type="checkbox" name="teleconsultation">
@@ -82,7 +81,7 @@
     </main>
 
 <?php
-    //require('templates/footer.php');
+    require('templates/footer.php');
 ?>
 </body>
-</html>git add 
+</html>

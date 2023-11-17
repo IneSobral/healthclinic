@@ -23,7 +23,7 @@
               <p><?= $doctor["languages"] ?></p>
             </div>
             <div class="doctor-card-info-bottom d-flex align-items-center">
-              <a href="" class="btn btn--blue btn-primary btn-size-regular" target="_blank"><span> Marcar </span></a>
+              <a href="/login/" class="btn btn--blue btn-primary btn-size-regular"><span> Marcar </span></a>
             </div>
           </div>
         </div>

@@ -14,7 +14,7 @@ a {
     text-decoration: none;
     color: #9fc2db;
     cursor: pointer;
-    text-decoration: none;
+    text-decoration: none !important;
     font-weight: 700;
     font-size: 16px;
     letter-spacing: 1px;
@@ -70,7 +70,7 @@ ul {
 
 .intro__hero {
     position: relative;
-    height: 40vh;
+    height: 250px;
 
 }
 .intro__heading {
@@ -121,12 +121,11 @@ p {
 }
 
 
+
 /* Medical page*/
 
 .medical__section {
     position: relative;
-    width: 100vw;
-    height: 40vh;
    
 }
 
@@ -137,6 +136,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
+    height: 250px;
     background-image: url(./imagens/medical-team.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -161,8 +161,8 @@ p {
 
 .team__filter--top {
     padding: 15px;
-    border: 1px solid #9fb8df;
     border-radius: 20px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,.3);
 }
 .team__filter--bottom{
     margin-top: 1rem;
@@ -173,7 +173,8 @@ p {
     padding: 2rem 6rem;
 }
 .form-check-input {
-    background-color: #b3d1e7 !important;
+    background-color: #cdd6de !important;
+    margin-right: 5px;
 }
 
 .team__search {
@@ -207,7 +208,7 @@ p {
 }
 
 .doctor-card {
-    background-color: #c9d9dfea;
+    background-color: #aecde37c;
     border-radius: 1rem;
     box-shadow: 0px 2px 4px rgba(0,0,0,.04);
     display: flex;
@@ -366,7 +367,6 @@ a:hover {
 
 .about__section {
     position: relative;
-    height: 40vh;
 }
 
 .about__section::before {
@@ -375,7 +375,7 @@ a:hover {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 250px;
     background-image: url(./imagens/about.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -414,6 +414,11 @@ a:hover {
         margin-top: 3rem;
        
     }
+}
+.dropdown {
+    border-radius: 5px;
+    padding: 5px;
+   margin: 4px;
 }
 
 .left-slide, .rigth-slide {
@@ -460,8 +465,7 @@ a:hover {
 
 .user__section {
     position: relative;
-    width: 100vw;
-    height: 40vh;
+    margin-bottom: 5rem;
    
 }
 
@@ -472,7 +476,8 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(./imagens/.jpg);
+    height: 250px;
+    background-image: url(./imagens/foto4.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -510,8 +515,6 @@ a:hover {
 
 .contact__section {
     position: relative;
-    width: 100vw;
-    height: 40vh;
    
 }
 
@@ -522,6 +525,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
+    height: 250px;
     background-image: url(./imagens/profile2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -530,12 +534,35 @@ a:hover {
     opacity: 0.7; 
 }
 
+.form-container {
+    
+}
+
 .contact-form {
-    max-width: 500px;
-    border: 1px solid #002766;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    padding: 2rem;
+    max-width: 550px;
+    margin: 4rem auto;
+    padding: 1rem 3rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    z-index: 2;
+    background-color:white;
+}
+.contact-form label {
+    margin-left: -10px;
+}
+.contact-form input, .contact-form textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(232, 232, 232);
+}
+.contact-form input[type="checkbox"] {
+    width: 15px;
+    margin-right: 5px;
 }
 
 .contact-img {
@@ -545,4 +572,118 @@ a:hover {
 
 .small-p {
     font-size: 12px;
+}
+
+
+.footer .footer__left {
+    margin: auto;
+    padding: 1rem;
+    border-top: 1px solid black;
+}
+.footer .footer__ul {
+    margin: auto;
+    margin-left: 20px;
+    display: flex;
+    gap: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+.footer .footer__ul .footer-a {
+    color: #ececec;
+    text-decoration: none;
+}
+.footer .footer__ul .footer-a:hover {
+    color: #b9b7b7;
+    text-decoration: underline;
+}
+.footer-info p {
+    font-size: smaller;
+}
+
+.admin__section {
+    margin-top: .5rem;
+}
+.admin__section h1 {
+    margin-left: 1rem;
+}
+
+.formAdmin {
+    max-width: 700px;
+    margin: 4rem auto;
+    padding: 1rem 1.5rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    z-index: 2;
+    background-color:white;
+   
+}
+.formAdmin.form-register {
+    max-width: 600px;
+}
+
+.formAdmin label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.formAdmin input, .formAdmin textarea, .formAdmin select {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(232, 232, 232);
+}
+
+.formAdmin div {
+    margin-bottom: 10px;
+}
+
+.formAdmin button {
+    margin: auto;
+    display: flex;
+    margin-top: 1rem;
+    padding: .5rem 2rem;
+}
+
+.bg-shape {
+    position: relative;
+    overflow: hidden;
+    padding: 50px;
+    margin-bottom: -3rem;
+  }
+  
+  .bg-shape:after {
+    content: '';
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background: #42a2e27c;
+    top: 50%;
+    right: 0;
+    bottom: 10px;
+    z-index: -1;
+    transform: skewY(-5deg);
+   
+  }
+
+
+  .formAdmin .checkbox {
+    display:flex;
+    align-items: center;
+}
+
+.formAdmin input[type="checkbox"] {
+    margin-left: -170px;
+    margin-top: -18px;
+}
+
+.formAdmin2 input[type="checkbox"] {
+    display: inline;
+    width: 50px;
+    margin-left: 0;
+    margin-top: 0;
 }

@@ -30,14 +30,14 @@
         echo '<p role="alert" class="alert alert-danger">' . $message . '</p>';
     }
 ?>
-                <p>Se ainda não tiver conta,<br> pode criar conta<a href="/register/"> aqui.</a></p>
+                <p>Se ainda não tiver conta,<br> pode criar conta <a href="/register/">aqui</a>.</p>
                 </form>
             </div>
         </div>
     </main>
 
 <?php
-    //require('templates/footer.php');
+    require('templates/footer.php');
 ?>
 </body>
 </html>

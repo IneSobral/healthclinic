@@ -10,8 +10,8 @@
             <div class='rigth-slide'>
                 <h1>Marcação online de consultas</h1>
                 <h2 class='heading__4'> Escolher Especialidade: </h2>
-                <select name="specialty" id="specialtySelect">
-                    <option value="">Selecione</option>
+                <select name="specialty" id="specialtySelect" class='dropdown'>
+                    <option value="">Selecionar especialidade</option>
 <?php
 
         foreach($specialties as $specialty) {
@@ -22,8 +22,8 @@
 ?>
                 <input type="hidden" id='selectedSpecialty' name='selectedSpecialty'>
                 </select>
-                <select name="doctor" id="doctorSelect">
-                    <option value="">Selecione um médico</option>
+                <select name="doctor" id="doctorSelect" class='dropdown'>
+                    <option value="">Selecionar médico</option>
                 </select>
                 <a href='/selectTime' class='btn btn-primary mt-3'>Seguinte</a>
             </div>
