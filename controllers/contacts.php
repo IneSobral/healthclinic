@@ -48,11 +48,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $mail->send();
             $message = 'Mensagem enviada com sucesso.';
         } catch (Exception $e) {
+            http_response_code(500);
             $messageError = 'Erro ao enviar o e-mail: ' . $mail->ErrorInfo;
         }
         
 
     } else {
+        http_response_code(400);
         $messageError = "Erro: Preencha todos os campos corretamente.";
     }
 }

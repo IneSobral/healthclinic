@@ -46,6 +46,7 @@ if (!isset($_SESSION["user_id"])) {
                 echo "Erro ao carregar os dados do utilizador.";
             }
         } else {
+            http_response_code(400);
             $message = "Preencha os campos corretamente";
         }
     } else {

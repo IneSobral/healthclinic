@@ -27,9 +27,11 @@ if( isset($_POST["send"]) ) {
             $_SESSION['user_id'] = $user['user_id'];
             header('Location: ../appointments');
         } else {
+            http_response_code(400);
             $message = "Preencha os campos correctamente.";
         }
     } else {
+        http_response_code(401);
         $message = "Email ou password incorrectos";
     }
 }

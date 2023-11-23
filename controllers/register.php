@@ -49,6 +49,7 @@
                 }
 
             } else {
+                http_response_code(400);
                 $message = "Preencha os campos correctamente";
             }
 

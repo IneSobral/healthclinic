@@ -24,9 +24,11 @@ if( isset($_POST["send"]) ) {
                 $_SESSION["admin_id"] = $admin["admin_id"];
                 header('Location: /adminProfile');
         } else {
+            http_response_code(400);
             $message = "Preencha os campos correctamente.";
         }
     } else {
+        http_response_code(401);
         $message = "Email ou password incorrectos";
     }
 }
